@@ -1,0 +1,58 @@
+[package]
+name = "leaflens-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Web framework
+axum = { version = "0.7", features = ["macros", "multipart", "tracing"] }
+tokio = { version = "1.0", features = ["full"] }
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors", "trace"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Database
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres", "chrono", "uuid"] }
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.0", features = ["v4", "serde"] }
+
+# Vector search
+qdrant-client = "1.7"
+
+# Configuration
+config = "0.14"
+dotenv = "0.15"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# HTTP client
+reqwest = { version = "0.11", features = ["json"] }
+
+# Image processing
+image = "0.24"
+
+# ML/AI
+ort = "2.0"
+ndarray = "0.15"
+
+# Utilities
+anyhow = "1.0"
+thiserror = "1.0"
+base64 = "0.21"
+hex = "0.4"
+
+# Security
+jsonwebtoken = "9.2"
+argon2 = "0.5"
+rand = "0.8"
+
+# Validation
+validator = { version = "0.16", features = ["derive"] }
+
+[dev-dependencies]
+tokio-test = "0.4"

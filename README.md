@@ -83,7 +83,7 @@ mobile/Flutter  ──► on-device model (TFLite/ONNX)
 
 ```bash
 # prerequisites: Flutter SDK, Android Studio or Xcode
-git clone https://github.com/yourname/leaflens.git
+git clone https://github.com/makalin/leaflens.git
 cd leaflens/app
 flutter pub get
 # download lightweight models (see below)

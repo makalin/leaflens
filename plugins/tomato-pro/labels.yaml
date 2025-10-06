@@ -1,0 +1,172 @@
+# Tomato Pro Plugin - Disease and Pest Labels
+# This plugin provides specialized detection for tomato plants
+
+version: "1.0.0"
+crop: "tomato"
+description: "Advanced tomato disease detection and treatment recommendations"
+
+# Disease categories
+categories:
+  healthy:
+    - "Healthy"
+    - "Normal"
+    - "No Disease"
+  
+  diseases:
+    - "Bacterial Spot"
+    - "Early Blight"
+    - "Late Blight"
+    - "Leaf Mold"
+    - "Septoria Leaf Spot"
+    - "Target Spot"
+    - "Tomato Mosaic Virus"
+    - "Tomato Yellow Leaf Curl Virus"
+    - "Powdery Mildew"
+    - "Rust"
+    - "Anthracnose"
+    - "Cercospora Leaf Spot"
+    - "Phomopsis Blight"
+    - "Alternaria Leaf Spot"
+    - "Fusarium Wilt"
+    - "Verticillium Wilt"
+    - "Root Rot"
+    - "Crown Rot"
+    - "Stem Rot"
+  
+  pests:
+    - "Aphids"
+    - "Whiteflies"
+    - "Thrips"
+    - "Spider Mites"
+    - "Tomato Hornworm"
+    - "Cutworms"
+    - "Flea Beetles"
+    - "Stink Bugs"
+    - "Leaf Miners"
+    - "Mealybugs"
+    - "Scale Insects"
+  
+  deficiencies:
+    - "Nitrogen Deficiency"
+    - "Phosphorus Deficiency"
+    - "Potassium Deficiency"
+    - "Calcium Deficiency"
+    - "Magnesium Deficiency"
+    - "Iron Deficiency"
+    - "Manganese Deficiency"
+    - "Zinc Deficiency"
+    - "Boron Deficiency"
+    - "Sulfur Deficiency"
+  
+  environmental:
+    - "Overwatering"
+    - "Underwatering"
+    - "Sunburn"
+    - "Cold Damage"
+    - "Heat Stress"
+    - "Nutrient Burn"
+    - "Salt Burn"
+    - "Wind Damage"
+    - "Hail Damage"
+
+# Label synonyms for better matching
+synonyms:
+  "Bacterial Spot": ["Bacterial Leaf Spot", "Xanthomonas Spot"]
+  "Early Blight": ["Alternaria Blight", "Target Spot"]
+  "Late Blight": ["Phytophthora Blight", "Potato Blight"]
+  "Leaf Mold": ["Cladosporium Mold", "Leaf Mould"]
+  "Septoria Leaf Spot": ["Septoria Blight", "Leaf Spot"]
+  "Target Spot": ["Corynespora Spot", "Target Blight"]
+  "Tomato Mosaic Virus": ["TMV", "Mosaic Virus"]
+  "Tomato Yellow Leaf Curl Virus": ["TYLCV", "Yellow Leaf Curl"]
+  "Powdery Mildew": ["Powdery Fungus", "White Mold"]
+  "Aphids": ["Green Aphids", "Black Aphids", "Plant Lice"]
+  "Whiteflies": ["White Flies", "Aleyrodidae"]
+  "Thrips": ["Thysanoptera", "Thrip"]
+  "Spider Mites": ["Red Spider Mites", "Two-Spotted Mites"]
+  "Tomato Hornworm": ["Hornworm", "Manduca Quinquemaculata"]
+  "Cutworms": ["Cut Worm", "Noctuid Moths"]
+  "Flea Beetles": ["Flea Beetle", "Chrysomelidae"]
+  "Stink Bugs": ["Stink Bug", "Pentatomidae"]
+  "Leaf Miners": ["Leaf Miner", "Liriomyza"]
+  "Nitrogen Deficiency": ["N Deficiency", "Nitrogen Lack"]
+  "Phosphorus Deficiency": ["P Deficiency", "Phosphorus Lack"]
+  "Potassium Deficiency": ["K Deficiency", "Potassium Lack"]
+  "Calcium Deficiency": ["Ca Deficiency", "Calcium Lack", "Blossom End Rot"]
+  "Magnesium Deficiency": ["Mg Deficiency", "Magnesium Lack"]
+  "Iron Deficiency": ["Fe Deficiency", "Iron Lack", "Chlorosis"]
+  "Overwatering": ["Too Much Water", "Waterlogged"]
+  "Underwatering": ["Too Little Water", "Drought Stress"]
+  "Sunburn": ["Sun Scald", "Sun Damage"]
+  "Cold Damage": ["Frost Damage", "Freeze Damage"]
+  "Heat Stress": ["Heat Damage", "High Temperature Stress"]
+
+# Confidence thresholds for different categories
+thresholds:
+  healthy: 0.8
+  diseases: 0.6
+  pests: 0.7
+  deficiencies: 0.6
+  environmental: 0.5
+
+# Priority levels for treatment recommendations
+priority:
+  critical:
+    - "Late Blight"
+    - "Fusarium Wilt"
+    - "Verticillium Wilt"
+    - "Root Rot"
+    - "Crown Rot"
+    - "Stem Rot"
+  
+  high:
+    - "Bacterial Spot"
+    - "Early Blight"
+    - "Leaf Mold"
+    - "Septoria Leaf Spot"
+    - "Target Spot"
+    - "Tomato Mosaic Virus"
+    - "Tomato Yellow Leaf Curl Virus"
+    - "Powdery Mildew"
+    - "Rust"
+    - "Anthracnose"
+    - "Cercospora Leaf Spot"
+    - "Phomopsis Blight"
+    - "Alternaria Leaf Spot"
+    - "Tomato Hornworm"
+    - "Cutworms"
+    - "Stink Bugs"
+    - "Nitrogen Deficiency"
+    - "Calcium Deficiency"
+    - "Iron Deficiency"
+  
+  medium:
+    - "Aphids"
+    - "Whiteflies"
+    - "Thrips"
+    - "Spider Mites"
+    - "Flea Beetles"
+    - "Leaf Miners"
+    - "Mealybugs"
+    - "Scale Insects"
+    - "Phosphorus Deficiency"
+    - "Potassium Deficiency"
+    - "Magnesium Deficiency"
+    - "Manganese Deficiency"
+    - "Zinc Deficiency"
+    - "Boron Deficiency"
+    - "Sulfur Deficiency"
+    - "Overwatering"
+    - "Underwatering"
+    - "Sunburn"
+    - "Cold Damage"
+    - "Heat Stress"
+    - "Nutrient Burn"
+    - "Salt Burn"
+    - "Wind Damage"
+    - "Hail Damage"
+  
+  low:
+    - "Healthy"
+    - "Normal"
+    - "No Disease"

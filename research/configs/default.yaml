@@ -1,0 +1,74 @@
+# Default configuration for LeafLens model training
+
+# Model configuration
+model:
+  type: efficientnet
+  backbone: efficientnet_b0
+  pretrained: true
+  dropout_rate: 0.3
+  num_classes: 100  # Will be updated based on dataset
+
+# Dataset configuration
+dataset:
+  type: plantvillage
+  data_dir: data/plantvillage
+  image_size: 224
+  batch_size: 32
+  num_workers: 4
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+
+# Training configuration
+training:
+  epochs: 100
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  scheduler: cosine
+  warmup_epochs: 5
+  save_interval: 10
+  early_stopping_patience: 20
+
+# Data augmentation
+augmentation:
+  horizontal_flip: 0.5
+  vertical_flip: 0.2
+  rotation: 15
+  brightness_contrast: 0.2
+  hue_saturation: 0.1
+  random_crop: 0.8
+  coarse_dropout: 0.3
+
+# Validation configuration
+validation:
+  metrics: [accuracy, precision, recall, f1, auc]
+  save_predictions: true
+  plot_confusion_matrix: true
+
+# Export configuration
+export:
+  onnx: true
+  tflite: true
+  coreml: false
+  formats: [onnx, tflite]
+
+# Logging configuration
+logging:
+  log_level: INFO
+  log_interval: 100
+  save_logs: true
+  use_wandb: false
+  wandb_project: leaflens
+
+# Hardware configuration
+hardware:
+  device: auto  # auto, cpu, cuda, mps
+  mixed_precision: true
+  compile_model: false
+
+# Paths
+paths:
+  output_dir: runs
+  model_dir: models
+  log_dir: logs
+  data_dir: data

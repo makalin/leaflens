@@ -1,0 +1,175 @@
+# Tomato Pro Expert Rules
+# Expert system rules for tomato plant diagnosis and treatment
+
+[metadata]
+version = "1.0.0"
+crop = "tomato"
+description = "Expert rules for tomato plant health diagnosis"
+author = "LeafLens Team"
+last_updated = "2024-01-15"
+
+# Environmental conditions
+[environmental]
+optimal_temperature_min = 18.0
+optimal_temperature_max = 24.0
+optimal_humidity_min = 60.0
+optimal_humidity_max = 80.0
+optimal_ph_min = 6.0
+optimal_ph_max = 6.8
+
+# Disease diagnosis rules
+[diseases.bacterial_spot]
+symptoms = ["dark_spots", "water_soaked", "yellow_halo", "necrotic"]
+conditions = ["high_humidity", "warm_temperature", "overhead_watering"]
+confidence_threshold = 0.7
+severity_indicators = ["rapid_spread", "fruit_lesions", "defoliation"]
+treatment_priority = "high"
+
+[diseases.early_blight]
+symptoms = ["target_spots", "concentric_rings", "yellow_margins"]
+conditions = ["high_humidity", "warm_temperature", "poor_air_circulation"]
+confidence_threshold = 0.8
+severity_indicators = ["lower_leaves_first", "rapid_spread", "fruit_rot"]
+treatment_priority = "high"
+
+[diseases.late_blight]
+symptoms = ["water_soaked_spots", "white_fuzzy_growth", "rapid_wilting"]
+conditions = ["cool_temperature", "high_humidity", "prolonged_wetness"]
+confidence_threshold = 0.9
+severity_indicators = ["overnight_spread", "complete_plant_collapse"]
+treatment_priority = "critical"
+
+[diseases.leaf_mold]
+symptoms = ["yellow_patches", "velvety_growth", "leaf_curling"]
+conditions = ["high_humidity", "poor_air_circulation", "dense_foliage"]
+confidence_threshold = 0.8
+severity_indicators = ["rapid_spread", "complete_defoliation"]
+treatment_priority = "medium"
+
+# Pest diagnosis rules
+[pests.aphids]
+symptoms = ["sticky_leaves", "honeydew", "distorted_growth", "ant_activity"]
+conditions = ["new_growth", "tender_plant_parts", "high_nitrogen"]
+confidence_threshold = 0.8
+severity_indicators = ["large_colonies", "virus_transmission", "honeydew_damage"]
+treatment_priority = "medium"
+
+[pests.whiteflies]
+symptoms = ["white_insects", "sticky_leaves", "yellowing", "sooty_mold"]
+conditions = ["warm_temperature", "high_humidity", "dense_foliage"]
+confidence_threshold = 0.8
+severity_indicators = ["large_populations", "virus_transmission", "honeydew_damage"]
+treatment_priority = "medium"
+
+[pests.spider_mites]
+symptoms = ["stippling", "webbing", "bronze_coloration", "leaf_drop"]
+conditions = ["hot_dry_weather", "low_humidity", "dusty_conditions"]
+confidence_threshold = 0.7
+severity_indicators = ["rapid_population_growth", "complete_defoliation"]
+treatment_priority = "high"
+
+[pests.tomato_hornworm]
+symptoms = ["large_chewed_areas", "green_caterpillars", "black_droppings"]
+conditions = ["summer_months", "mature_plants", "night_feeding"]
+confidence_threshold = 0.9
+severity_indicators = ["rapid_defoliation", "fruit_damage"]
+treatment_priority = "high"
+
+# Nutrient deficiency rules
+[deficiencies.nitrogen]
+symptoms = ["yellowing_leaves", "stunted_growth", "pale_green_color"]
+conditions = ["sandy_soil", "excessive_rainfall", "poor_fertilization"]
+confidence_threshold = 0.7
+severity_indicators = ["older_leaves_first", "complete_yellowing", "stunted_growth"]
+treatment_priority = "medium"
+
+[deficiencies.calcium]
+symptoms = ["blossom_end_rot", "stunted_growth", "leaf_curling"]
+conditions = ["irregular_watering", "low_soil_calcium", "high_nitrogen"]
+confidence_threshold = 0.8
+severity_indicators = ["fruit_rot", "stunted_growth", "leaf_distortion"]
+treatment_priority = "high"
+
+[deficiencies.phosphorus]
+symptoms = ["purple_tinting", "stunted_growth", "poor_flowering"]
+conditions = ["cold_soil", "low_ph", "compacted_soil"]
+confidence_threshold = 0.6
+severity_indicators = ["severe_stunting", "poor_fruit_set"]
+treatment_priority = "medium"
+
+[deficiencies.potassium]
+symptoms = ["yellow_margins", "brown_edges", "poor_fruit_quality"]
+conditions = ["sandy_soil", "excessive_rainfall", "high_nitrogen"]
+confidence_threshold = 0.7
+severity_indicators = ["severe_marginal_burn", "poor_fruit_quality"]
+treatment_priority = "medium"
+
+# Environmental stress rules
+[environmental.overwatering]
+symptoms = ["yellowing_leaves", "wilting", "root_rot", "stunted_growth"]
+conditions = ["poor_drainage", "frequent_watering", "heavy_soil"]
+confidence_threshold = 0.8
+severity_indicators = ["root_rot", "complete_wilting", "plant_death"]
+treatment_priority = "high"
+
+[environmental.underwatering]
+symptoms = ["wilting", "dry_soil", "stunted_growth", "leaf_curl"]
+conditions = ["hot_weather", "sandy_soil", "infrequent_watering"]
+confidence_threshold = 0.8
+severity_indicators = ["severe_wilting", "leaf_drop", "plant_death"]
+treatment_priority = "high"
+
+[environmental.sunburn]
+symptoms = ["white_patches", "brown_edges", "leaf_scorching"]
+conditions = ["intense_sun", "sudden_exposure", "hot_weather"]
+confidence_threshold = 0.9
+severity_indicators = ["severe_scorching", "leaf_drop"]
+treatment_priority = "low"
+
+[environmental.cold_damage]
+symptoms = ["black_edges", "wilting", "stunted_growth", "leaf_drop"]
+conditions = ["frost", "cold_temperature", "early_planting"]
+confidence_threshold = 0.9
+severity_indicators = ["complete_wilting", "plant_death"]
+treatment_priority = "high"
+
+# Treatment recommendations
+[treatments.bacterial_spot]
+immediate_actions = ["remove_infected_material", "improve_air_circulation", "avoid_overhead_watering"]
+chemical_treatments = ["copper_fungicide", "fixed_copper", "copper_soap"]
+organic_treatments = ["baking_soda_spray", "milk_spray", "copper_soap"]
+prevention = ["crop_rotation", "disease_free_seeds", "proper_spacing"]
+application_frequency = "every_7_10_days"
+duration = "2_3_weeks"
+
+[treatments.aphids]
+immediate_actions = ["physical_removal", "water_spray", "prune_infested_areas"]
+chemical_treatments = ["insecticidal_soap", "neem_oil", "pyrethrin"]
+organic_treatments = ["beneficial_insects", "garlic_spray", "chili_spray"]
+prevention = ["beneficial_plants", "avoid_over_fertilization", "regular_monitoring"]
+application_frequency = "every_3_5_days"
+duration = "1_2_weeks"
+
+[treatments.nitrogen_deficiency]
+immediate_actions = ["apply_nitrogen_fertilizer", "check_soil_ph", "improve_drainage"]
+chemical_treatments = ["ammonium_nitrate", "urea", "nitrate_fertilizer"]
+organic_treatments = ["compost", "fish_emulsion", "blood_meal"]
+prevention = ["regular_fertilization", "soil_testing", "cover_crops"]
+application_frequency = "every_2_3_weeks"
+duration = "2_4_weeks"
+
+# Confidence scoring
+[confidence_scoring]
+base_confidence = 0.5
+symptom_match_bonus = 0.2
+condition_match_bonus = 0.1
+severity_bonus = 0.1
+expert_rule_bonus = 0.1
+max_confidence = 1.0
+
+# Severity levels
+[severity_levels]
+low = { threshold = 0.3, description = "Minor issue, monitor closely" }
+medium = { threshold = 0.6, description = "Moderate issue, treatment recommended" }
+high = { threshold = 0.8, description = "Serious issue, immediate treatment required" }
+critical = { threshold = 0.9, description = "Critical issue, emergency treatment required" }
